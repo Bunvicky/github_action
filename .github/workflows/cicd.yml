@@ -1,4 +1,4 @@
- name: My Workflow
+name: My Workflow
 on: [push]
 
 jobs:
@@ -7,7 +7,6 @@ jobs:
     steps:
       - name: My Step
         run: echo "Hello, world!"
-
 
 
 # env:
