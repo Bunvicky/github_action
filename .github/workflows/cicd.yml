@@ -6,7 +6,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: My Step
-        run: echo "Hello, world!"
+       
+   run: echo "Hello, world!"
+
  env:
    AWS_ACCESS_KEY_ID: ${{ secrets.ACCESS_KEY }}
    AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
@@ -30,4 +32,4 @@ jobs:
        - name: Terraform apply
          run: terraform apply -auto-approve
        - name: Terraform destroy
-        #run: terraform destroy -auto-approve
+        run: terraform destroy -auto-approve
