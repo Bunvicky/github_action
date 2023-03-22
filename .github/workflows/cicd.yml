@@ -22,8 +22,9 @@ jobs:
       - name: Terraform validate
         run: terraform validate        
       - name: Terraform plan
-         run: terraform plan                         #To run terraform
-# permissions:
+        run: terraform plan                         #To run terraform
+
+        # permissions:
       #   contents: write
       #   issues: write
       #   pull-requests: write
