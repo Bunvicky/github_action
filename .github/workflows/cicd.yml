@@ -6,7 +6,7 @@
    AWS_ACCESS_KEY_ID: ${{ secrets.ACCESS_KEY }}
    AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
 
-  jobs:
+   jobs:
     terraform-workflow:
       permissions:
         contents: write
@@ -25,4 +25,4 @@
         - name: Terraform validate
           run: terraform validate
         - name: Terraform plan
-          run: terraform plan
+          run: terraform plan                         #To run terraform
