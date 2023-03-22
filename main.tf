@@ -8,7 +8,7 @@ resource "aws_vpc" "actions" {
   tags = {
     Name = "Class30"
     Team = "DevOps"
-    Environment = "stage"
+    Environment = "pro"
   }
 }
 
@@ -21,7 +21,7 @@ terraform {
     }
   }
   backend "s3" {
-    bucket = "myotherclass26bucket"
+    bucket = aws_s3_bucket.bootcamp30-1234-vicky.id
     key = "dev/terraform.tfstate"
     #dynamodb_table = "terraform-lock"
     region = "us-west-1"
