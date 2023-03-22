@@ -1,5 +1,5 @@
 provider "aws" {
-  region = "us-west-2"
+  region = "us-west-1"
 }
 
 resource "aws_vpc" "actions" {
@@ -8,7 +8,7 @@ resource "aws_vpc" "actions" {
   tags = {
     Name = "Class30"
     Team = "DevOps"
-    Environment = "Prod"
+    Environment = "stage"
   }
 }
 
@@ -21,9 +21,9 @@ terraform {
     }
   }
   backend "s3" {
-    bucket = "myotherclass25bucket"
+    bucket = "myotherclass26bucket"
     key = "dev/terraform.tfstate"
     #dynamodb_table = "terraform-lock"
-    region = "us-west-2"
+    region = "us-west-1"
   }
 }
