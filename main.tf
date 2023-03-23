@@ -2,28 +2,17 @@ provider "aws" {
   region = "us-west-1"
 }
 
-resource "aws_vpc" "actions" {
-   cidr_block = "10.0.0.0/16"
-
-  tags = {
-    Name = "Class30"
-    Team = "DevOps"
-    Environment = "pro"
-  }
+resource "aws_s3_bucket" "bootcamp30-123-vicky" {
+  bucket = "bootcamp30-123-vicky"
 }
 
-terraform {
-  required_version = "~> 1.0"
-  required_providers {
-    aws = {
-      source  = "hashicorp/aws"
-      version = "~> 3.0" # Optional but recommended in production
+resource "aws_s3_bucket_server_side_encryption_configuration" "example" {
+  bucket = aws_s3_bucket.bootcamp30-123-vicky.id
+
+  rule {
+    apply_server_side_encryption_by_default {
+      kms_master_key_id = aws_kms_key.mykey.arn
+      sse_algorithm     = "aws:kms"
     }
   }
-  backend "s3" {
-    bucket = "goldenbucket"
-    key =    "dev/terraform.tfstate"                                                    
-    #dynamodb_table = "terraform-lock"
-    region = "us-west-1"
-  }
-}# "path/to/my/key"  
+}
