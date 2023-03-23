@@ -22,8 +22,8 @@ terraform {
   }
   backend "s3" {
     bucket = "goldenbucket"
-    key = "dev/terraform.tfstate"
+    key =    "dev/terraform.tfstate"                                                    
     #dynamodb_table = "terraform-lock"
     region = "us-west-1"
   }
-}
+}# "path/to/my/key"  
