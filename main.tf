@@ -21,7 +21,7 @@ terraform {
     }
   }
   backend "s3" {
-    bucket = aws_s3_bucket.bootcamp30-1234-vicky.id
+    bucket = "goldenbucket"
     key = "dev/terraform.tfstate"
     #dynamodb_table = "terraform-lock"
     region = "us-west-1"
